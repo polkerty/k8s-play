@@ -1,8 +1,7 @@
 const express = require("express");
 const app = express();
 
-const people = `
-Jacob Brazeal
+const people = `Jacob Brazeal
 Sarah Jochum
 Elliot Lovegrove
 Jeremiah England
@@ -16,8 +15,7 @@ Alex Wang
 Zach Garner
 Lei Zhao
 Gary Change
-Yuting Duan
-`.split();
+Yuting Duan`.split("\n");
 
 const personality = people[(Math.random() * people.length) | 0];
 
