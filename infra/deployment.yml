@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jacob-staging-chorus-app
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      jacob-app: chorus
+  template:
+    metadata:
+      labels:
+        jacob-app: chorus
+    spec:
+      containers:
+      - name: chorus
+        image: cuniculus/chorus:1.0
+        ports:
+        - containerPort: 9000
+
