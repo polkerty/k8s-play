@@ -3,6 +3,9 @@ kind: ConfigMap
 metadata:
     name: {{ .Release.Name }}-configmap
 data:
-    leaseSeconds: "10"
-    zookeeperReplicas: {{ .Values.zookeeperReplicas }}
-    walBufferSize: {{ .Values.wal.bufferSize }}
+    {{- $files := .Files }}
+    {{- range tuple "a.toml" "b.toml" "c.toml" }}
+    {{ . }} : |-
+        {{ $files.Get . }}
+    {{- end }}
+
