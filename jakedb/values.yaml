@@ -1,5 +1,0 @@
-zookeeperReplicas: "5"
-wal:
-    bufferSize: 100
-    format: json
-version: "snap-turtle"
